@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// ignore: library_prefixes
 import 'package:badges/badges.dart' as myBadges;
 
 class MainHeader extends StatelessWidget {
@@ -46,6 +47,10 @@ class MainHeader extends StatelessWidget {
                   borderSide: BorderSide.none,
                 ),
                 hintText: "Tìm kiếm",
+                hintStyle: const TextStyle(
+                  fontWeight: FontWeight.w500,
+                  color: Colors.black,
+                ),
                 prefixIcon: const Icon(
                   Icons.search,
                   color: Colors.black,
@@ -69,12 +74,13 @@ class MainHeader extends StatelessWidget {
             ),
             padding: const EdgeInsets.all(12),
             child: const Icon(Icons.filter_alt_outlined,
-            color: Colors.grey,),
+            color: Colors.black
+            ),
           ),
           const SizedBox(width: 10),
           myBadges.Badge(
             badgeContent:
-            Text(
+            const Text(
               '1',
               style: TextStyle (
                 color: Colors.white
@@ -95,7 +101,8 @@ class MainHeader extends StatelessWidget {
               ),
               padding: const EdgeInsets.all(12),
               child: const Icon(Icons.shopping_cart_outlined,
-                color: Colors.grey,),
+                color: Colors.black
+              ),
             ),
           ),
           const SizedBox(width: 5),

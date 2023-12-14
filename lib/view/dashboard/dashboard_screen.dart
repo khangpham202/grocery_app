@@ -17,7 +17,7 @@ class DashboardScreen extends StatelessWidget {
             children: [
               const HomeScreen(),
               Container(
-                color: Colors.red,
+                color: Colors.yellow,
               ),
               Container(
                 color: Colors.blue,
@@ -59,7 +59,6 @@ class DashboardScreen extends StatelessWidget {
               BottomNavigationBarItem(icon: Icon(Icons.category), label: 'Sản Phẩm'),
               BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Phân Loại'),
               BottomNavigationBarItem(icon: Icon(Icons.account_circle), label: 'Tài khoản'),
-
             ],
           ),
         ),

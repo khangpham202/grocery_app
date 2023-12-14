@@ -1,68 +1,84 @@
-import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 
-import '../../../../model/ad_banner.dart';
-import 'banner_card.dart';
-
-class CarouselSliderView extends StatefulWidget {
-  final List<AdBanner> bannerList;
-  const CarouselSliderView({Key? key, required this.bannerList})
-      : super(key: key);
-
-  @override
-  State<CarouselSliderView> createState() => _CarouselSliderViewState();
-}
-
-class _CarouselSliderViewState extends State<CarouselSliderView> {
-  int _currentIndex = 0;
-  late List<Widget> _bannerList;
-
-  @override
-  void initState() {
-    _bannerList =
-        widget.bannerList.map((e) =>
-            BannerCard(imageUrl: e.image)).toList();
-    super.initState();
-  }
+class CarouselLoading extends StatelessWidget {
+  const CarouselLoading({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CarouselSlider(
-            items: _bannerList,
-            options: CarouselOptions(
-                autoPlay: true,
-                enlargeCenterPage: true,
+    return Shimmer.fromColors(
+      highlightColor: Colors.white,
+      baseColor: Colors.grey.shade300,
+      child: Column(
+        children: [
+          Container(
+            margin: const EdgeInsets.all(10),
+            decoration: const BoxDecoration(
+                color: Colors.grey,
+                borderRadius: BorderRadius.all(Radius.circular(10))
+            ),
+            child: ClipRRect(
+              borderRadius: const BorderRadius.all(Radius.circular(10)),
+              child: AspectRatio(
                 aspectRatio: 16/9,
-                viewportFraction: 1,
-                onPageChanged: (index, reason) {
-                  setState(() {
-                    _currentIndex = index;
-                  });
-                }
-            )
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: widget.bannerList.map((e) {
-            int index = widget.bannerList.indexOf(e);
-            return Container(
-              width: 8,
-              height: 8,
-              margin: const EdgeInsets.symmetric(vertical: 10,
-                  horizontal: 2),
-              decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: _currentIndex == index
-                      ? const Color.fromRGBO(0, 0, 0, 0.9)
-                      : const Color.fromRGBO(0, 0, 0, 0.4)
+                child: Container(
+                  color: Colors.grey,
+                ),
               ),
-            );
-          }).toList(),
-        )
-      ],
+            ),
+          ),
+          const SizedBox(height: 8),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                height: 8,
+                width: 8,
+                decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.grey
+                ),
+              ),
+              const SizedBox(width: 2),
+              Container(
+                height: 8,
+                width: 8,
+                decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.grey
+                ),
+              ),
+              const SizedBox(width: 2),
+              Container(
+                height: 8,
+                width: 8,
+                decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.grey
+                ),
+              ),
+              const SizedBox(width: 2),
+              Container(
+                height: 8,
+                width: 8,
+                decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.grey
+                ),
+              ),
+              const SizedBox(width: 2),
+              Container(
+                height: 8,
+                width: 8,
+                decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Colors.grey
+                ),
+              )
+            ],
+          )
+        ],
+      ),
     );
   }
 }
