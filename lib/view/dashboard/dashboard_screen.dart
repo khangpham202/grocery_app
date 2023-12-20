@@ -4,6 +4,8 @@ import 'package:get/get.dart';
 import 'package:my_shopping_app/controller/dashboard_controller.dart';
 import 'package:my_shopping_app/view/home/home_screen.dart';
 
+import '../../pages/setting/setting_page.dart';
+
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
@@ -22,43 +24,39 @@ class DashboardScreen extends StatelessWidget {
               Container(
                 color: Colors.blue,
               ),
-              Container(
-                color: Colors.orange,
-              ),
-
+              const SettingPage(),
             ],
           ),
         ),
         bottomNavigationBar: Container(
           decoration: BoxDecoration(
-            color: Colors.white,
-            border: Border(
-              top: BorderSide(
+              color: Colors.white,
+              border: Border(
+                  top: BorderSide(
                 color: Theme.of(context).colorScheme.secondary,
                 width: 0.1,
-              )
-            )
-          ),
+              ))),
           child: SnakeNavigationBar.color(
             behaviour: SnakeBarBehaviour.floating,
             snakeShape: SnakeShape.circle,
             padding: const EdgeInsets.symmetric(vertical: 5),
-            unselectedLabelStyle: const TextStyle(
-                fontSize: 11,
-              fontWeight: FontWeight.w600
-            ),
+            unselectedLabelStyle:
+                const TextStyle(fontSize: 11, fontWeight: FontWeight.w600),
             snakeViewColor: Theme.of(context).primaryColor,
             unselectedItemColor: Theme.of(context).colorScheme.secondary,
             showUnselectedLabels: true,
             currentIndex: controller.tabIndex,
-            onTap: (val){
+            onTap: (val) {
               controller.updateIndex(val);
             },
             items: const [
               BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-              BottomNavigationBarItem(icon: Icon(Icons.category), label: 'Sản Phẩm'),
-              BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Phân Loại'),
-              BottomNavigationBarItem(icon: Icon(Icons.account_circle), label: 'Tài khoản'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.category), label: 'Sản Phẩm'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.menu), label: 'Phân Loại'),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.account_circle), label: 'Tài khoản'),
             ],
           ),
         ),
