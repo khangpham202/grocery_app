@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_shopping_app/pages/setting/component/setting_item.dart';
+import 'package:my_shopping_app/view/setting/component/setting_item.dart';
 
 class SettingPage extends StatelessWidget {
   const SettingPage({super.key});
@@ -51,7 +51,7 @@ class SettingPage extends StatelessWidget {
               borderRadius: BorderRadius.all(Radius.circular(35)),
             ),
           ),
-          Text('Sign in your account',
+          const Text('Sign in your account',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500))
         ],
       ),

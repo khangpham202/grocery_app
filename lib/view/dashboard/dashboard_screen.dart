@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:my_shopping_app/controller/dashboard_controller.dart';
 import 'package:my_shopping_app/view/home/home_screen.dart';
 
-import '../../pages/setting/setting_page.dart';
+import '../setting/setting_page.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});

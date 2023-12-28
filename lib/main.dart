@@ -6,7 +6,7 @@ import 'package:my_shopping_app/route/app_page.dart';
 import 'package:my_shopping_app/route/app_route.dart';
 import 'package:my_shopping_app/theme/app_theme.dart';
 
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Hive.initFlutter();
 
@@ -20,11 +20,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       getPages: AppPage.list,
-      initialRoute: AppRoute.dashboard,
+      initialRoute: AppRoute.signIn,
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
       themeMode: ThemeMode.light,
     );
   }
 }
-
