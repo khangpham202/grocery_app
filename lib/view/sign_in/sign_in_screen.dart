@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:my_shopping_app/components/custom_button.dart';
 import 'package:my_shopping_app/components/custom_login_fb_gg.dart';
+import 'package:my_shopping_app/route/app_route.dart';
 
-import 'components/text_input_field.dart';
+import '../../components/text_input_field.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
@@ -54,12 +56,14 @@ class SignInScreen extends StatelessWidget {
                   const CustomLoginFbGg(title: 'Hoặc đăng nhập bằng'),
                   const SizedBox(height: 30),
                   Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-                    Text('Bạn chưa có tài khoản?'),
+                    const Text('Bạn chưa có tài khoản?'),
                     Padding(
                       padding: const EdgeInsets.only(left: 6),
                       child: GestureDetector(
-                          onTap: () {},
-                          child: Text('Đăng ký ngay',
+                          onTap: () {
+                            Get.toNamed(AppRoute.signUp);
+                          },
+                          child: const Text('Đăng ký ngay',
                               style: TextStyle(
                                   decoration: TextDecoration.underline))),
                     )

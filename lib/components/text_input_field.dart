@@ -28,7 +28,7 @@ class _TextInputFieldState extends State<TextInputField> {
       ),
       cursorColor: Colors.blue[600],
       onTapOutside: (event) {
-        FocusScope.of(context).requestFocus(new FocusNode());
+        FocusScope.of(context).requestFocus(FocusNode());
       },
     );
   }
